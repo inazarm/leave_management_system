@@ -31,7 +31,6 @@ namespace CustomValidationAttribute.ValidationAttributeExtensions
                 ValidationType = "greaterdate"
             };
             rule.ValidationParameters["earlierdate"] = EarlierDateField;
-
             yield return rule;
         }
     }
