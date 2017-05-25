@@ -46,13 +46,8 @@ namespace ViewModels
             {
                 return this.IsApproved.Equals(true) ? "yes" : "no";
             }
-
             set
-            {
-                //if (this.IsApproved.Equals(true))
-                //    this.Approved = "yes";
-
-                //else this.Approved = "no";
+            {  
             }
         }
 
@@ -68,7 +63,6 @@ namespace ViewModels
             }
             set
             {
-
             }
         }
 
@@ -81,7 +75,6 @@ namespace ViewModels
 
             set
             {
-
             }
         }
 
@@ -95,7 +88,6 @@ namespace ViewModels
 
             set
             {
-
             }
         }
 
