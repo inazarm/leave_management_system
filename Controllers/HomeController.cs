@@ -18,7 +18,7 @@ namespace Web.Controllers
         {
             ActiveDirectoryWarehouseContext db = new ActiveDirectoryWarehouseContext();
 			
-			// Get username by windows auth
+	    // Get username by windows auth
             var Username = User.Identity.Name.Split('\\')[1];
             ViewBag.Username = db.UserProfiles.Where(w => w.PKUserName.Equals(Username)).FirstOrDefault().UserFullName;
 
