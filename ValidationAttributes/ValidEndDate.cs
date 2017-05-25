@@ -20,7 +20,6 @@ namespace CustomValidationAttribute.ValidationAttributeExtensions
             {
                 return new ValidationResult(ErrorMessage);
             }
-
             return ValidationResult.Success;
         }
 
