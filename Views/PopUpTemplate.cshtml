@@ -135,7 +135,7 @@
     </div>
 </script>
 
-@*Success notification if core fields valid else error notification *@
+//Success notification if core fields valid else error notification
 <script>
     $(document).ready(function () {
         $(".k-grid-update").attr("id", "showNotification");
@@ -144,13 +144,13 @@
             var notification = $("#notification").data("kendoNotification");
             var invalid = ($("#StartDate").hasClass("k-invalid") || $("#EndDate").hasClass("k-invalid") || $("#Entitlement").hasClass("k-invalid"));
             
-            if (invalid) {/*if one or more of the 3 fields are invalid*/
+            if (invalid) {//if one or more of the 3 fields are invalid
                 notification.show({
                     title: "Email not sent",
                     message: "Please try again."
                 }, "error");
             }
-            else {/*fields valid*/
+            else {//fields valid
                 notification.show({
                     message: "Email sent"
                 }, "upload-success");
