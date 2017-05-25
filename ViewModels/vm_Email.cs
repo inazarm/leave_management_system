@@ -60,7 +60,6 @@ namespace ViewModels
             }
             set
             {
-
             }
         }
 
@@ -72,7 +71,6 @@ namespace ViewModels
             }
             set
             {
-
             }
         }
 
@@ -85,7 +83,6 @@ namespace ViewModels
             }
             set
             {
-
             }
         }
 
