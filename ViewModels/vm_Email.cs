@@ -70,7 +70,6 @@ namespace ViewModels
             {
                 return this.IsEntitlementOvertaken.Equals(true) ? "yes" : "no";
             }
-
             set
             {
 
@@ -84,7 +83,6 @@ namespace ViewModels
             {
                 return (int) (this.EndDate -  this.StartDate).TotalDays;
             }
-
             set
             {
 
@@ -115,7 +113,6 @@ namespace ViewModels
             {
                 return this.IsApproved.Equals(true) ? "yes" : "no";
             }
-
             set
             {
             }
