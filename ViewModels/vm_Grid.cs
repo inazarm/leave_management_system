@@ -46,9 +46,6 @@ namespace ViewModels
             {
                 return this.IsApproved.Equals(true) ? "yes" : "no";
             }
-            set
-            {  
-            }
         }
 
         [Required]
@@ -61,9 +58,6 @@ namespace ViewModels
             {
                 return this.Entitlement - this.BreakDuration < 0 ? true : false;
             }
-            set
-            {
-            }
         }
 
         public string EntitlementOvertaken
@@ -71,10 +65,6 @@ namespace ViewModels
             get
             {
                 return this.IsEntitlementOvertaken.Equals(true) ? "yes" : "no";
-            }
-
-            set
-            {
             }
         }
 
@@ -85,10 +75,6 @@ namespace ViewModels
             {
                 return (int?) (this.EndDate - this.StartDate).TotalDays;
             }
-
-            set
-            {
-            }
         }
 
         private int? remainingDays;
@@ -97,9 +83,6 @@ namespace ViewModels
             get
             {
                 return this.Entitlement - this.BreakDuration;
-            }
-            set
-            {
             }
         }
     }
