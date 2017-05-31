@@ -142,7 +142,7 @@
 
         $("#showNotification").on("click", function () {
             var notification = $("#notification").data("kendoNotification");
-            var invalid = ($("#StartDate").hasClass("k-invalid") || $("#EndDate").hasClass("k-invalid") || $("#Entitlement").hasClass("k-invalid"));
+            var invalid = ($("#StartDate").hasClass("k-invalid") || $("#EndDate").hasClass("k-invalid") || $("#Entitlement").hasClass("k-invalid") || $("#Entitlement").val() == "");
             
             if (invalid) {//if one or more of the 3 fields are invalid
                 notification.show({
