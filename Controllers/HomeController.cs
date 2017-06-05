@@ -33,25 +33,25 @@ namespace Web.Controllers
             var loggedInUser = User.Identity.Name.Split(separator: new char[] { '\\' })[1];
 
             var staffProfile = dbAD.UserProfiles
-                .Where(w => w.PKUserName.Equals(loggedInUser))
-                .Select(s => new vm_UserProfile()
-                {
-                    PK_UserName = s.PKUserName,
-                    UserFirstName = s.UserFirstName,
-                    UserSurname = s.UserSurname,
-                    UserEmail = s.UserEmail,
-                    UserTelephone = s.UserTelephone,
-                    UserMobileNumber = s.UserMobileNumber,
-                    UserJobTitle = s.UserJobTitle,
-                    Office = s.Office,
-                    Department = s.Department,
-                    Manager = s.Manager,
-                    Company = s.Company
-                }).FirstOrDefault();
+				.Where(w => w.PKUserName.Equals(loggedInUser))
+				.Select(s => new vm_UserProfile()
+				{
+				    PK_UserName = s.PKUserName,
+				    UserFirstName = s.UserFirstName,
+				    UserSurname = s.UserSurname,
+				    UserEmail = s.UserEmail,
+				    UserTelephone = s.UserTelephone,
+				    UserMobileNumber = s.UserMobileNumber,
+				    UserJobTitle = s.UserJobTitle,
+				    Office = s.Office,
+				    Department = s.Department,
+				    Manager = s.Manager,
+				    Company = s.Company
+				}).FirstOrDefault();
 
             var managerProfile = dbAD.UserProfiles
-                              .Where(w => w.UserFullName.Equals(staffProfile.Manager))
-                              .FirstOrDefault();
+				   .Where(w => w.UserFullName.Equals(staffProfile.Manager))
+				   .FirstOrDefault();
 
             dbAD.Dispose();
 
@@ -89,8 +89,8 @@ namespace Web.Controllers
             var staffLoginID = User.Identity.Name.Split('\\')[1];
 
             var staffProfile = dbAD.UserProfiles
-                .Where(w => w.PKUserName.Equals(staffLoginID))
-                .FirstOrDefault();
+				.Where(w => w.PKUserName.Equals(staffLoginID))
+				.FirstOrDefault();
 
             dbAD.Dispose();
 
@@ -130,8 +130,8 @@ namespace Web.Controllers
                     var staffLoginID = User.Identity.Name.Split('\\')[1];
 
                     var staffProfile = dbAD.UserProfiles
-                        .Where(w => w.PKUserName.Equals(staffLoginID))
-                        .FirstOrDefault();
+					.Where(w => w.PKUserName.Equals(staffLoginID))
+					.FirstOrDefault();
                     UserManagement model = db.UserManagements.Where(w => w.PK_ID.Equals(viewModel.PK_ID)).FirstOrDefault();
 
                     model.PK_ID = viewModel.PK_ID;
@@ -179,21 +179,21 @@ namespace Web.Controllers
             var loggedInUser = User.Identity.Name.Split(separator: new char[] { '\\' })[1];
 
             var staffProfile = dbAD.UserProfiles
-                .Where(w => w.PKUserName.Equals(loggedInUser))
-                .Select(s => new vm_UserProfile()
-                {
-                    PK_UserName = s.PKUserName,
-                    UserFirstName = s.UserFirstName,
-                    UserSurname = s.UserSurname,
-                    UserEmail = s.UserEmail,
-                    UserTelephone = s.UserTelephone,
-                    UserMobileNumber = s.UserMobileNumber,
-                    UserJobTitle = s.UserJobTitle,
-                    Office = s.Office,
-                    Department = s.Department,
-                    Manager = s.Manager,
-                    Company = s.Company
-                }).FirstOrDefault();
+				.Where(w => w.PKUserName.Equals(loggedInUser))
+				.Select(s => new vm_UserProfile()
+				{
+				    PK_UserName = s.PKUserName,
+				    UserFirstName = s.UserFirstName,
+				    UserSurname = s.UserSurname,
+				    UserEmail = s.UserEmail,
+				    UserTelephone = s.UserTelephone,
+				    UserMobileNumber = s.UserMobileNumber,
+				    UserJobTitle = s.UserJobTitle,
+				    Office = s.Office,
+				    Department = s.Department,
+				    Manager = s.Manager,
+				    Company = s.Company
+				}).FirstOrDefault();
 
             UserProfile managerProfile = dbAD.UserProfiles
                                           .Where(w => w.UserFullName.Equals(staffProfile.Manager))
