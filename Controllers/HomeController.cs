@@ -243,14 +243,6 @@ namespace Web.Controllers
             EmailHandler confirmationEmail = new EmailHandler();
             confirmationEmail.SendEmailNotification(from, from, "Leave request confirmation", templateConfirmation);
         }
-
-        public partial class NotificationController : Controller
-        {
-            public ActionResult PopUpTemplate()
-            {
-                return View();
-            }
-        }
     }
 }
 
