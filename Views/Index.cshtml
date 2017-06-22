@@ -26,6 +26,10 @@
 
         .ServerOperation(false)
     )
+      .Events(evt =>
+    {
+        evt.DataBound("onDataBound");
+    })
     .ToolBar(toolbar =>
     {
         toolbar.Create().Text("Add Request").HtmlAttributes(new { @class = "pull-left" });
@@ -194,6 +198,24 @@
         vertical-align: middle;
         margin-right: 10px;
     }
+    
+    .green {
+        margin-bottom: 0px;
+        border-radius: 0px;
+        background-color: rgba(198,239, 206, 1);
+        color: rgb(0,97, 0);
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .red {
+        margin-bottom: 0px;
+        border-radius: 0px;
+        background-color: rgba(255,199, 206, 1);
+        color: rgb(156,0,6);
+        font-weight: bolder;
+        text-align: center;
+    }
 </style>
 
 <script type="text/javascript">
@@ -220,6 +242,30 @@
             }
         });
     })(jQuery, kendo);
+</script>
+
+<script>
+    function onDataBound(e) {
+        var grid = $("#" + e.sender.table.prevObject[0].id).data("kendoGrid");
+
+        grid.tbody.find('>tr').each(function () {
+            var dataItem = grid.dataItem(this);
+
+            changeRow($(this), dataItem.Approved);
+        });
+    }
+
+    function changeRow(row, value) {
+        if (value === "yes") {
+            row.removeClass("red");
+            row.addClass("green");
+        }
+
+        if (value === "no") {
+            row.removeClass("green");
+            row.addClass("red");
+        }
+    }
 </script>
 
 
