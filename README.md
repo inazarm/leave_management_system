@@ -1,4 +1,4 @@
-# LMS
+# LMS [SAMPLE]
 
 A leave management system sending a template email to the manager within all the informations of the employee request
 
